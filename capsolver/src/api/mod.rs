@@ -11,8 +11,8 @@ pub struct CapsolverApi {
 }
 
 impl CapsolverApi {
-    pub fn new(base_url: &str, client_key: &str, website_url: &str, website_key: &str) -> Self {
-        let client = ApiClient::new(base_url.to_string()).unwrap();
+    pub fn new(client_key: &str, website_url: &str, website_key: &str) -> Self {
+        let client = ApiClient::new("https://api.capsolver.com/".to_string()).unwrap();
         client.set_header("host", "api.capsolver.com");
         client.set_header("content-type", "application/json");
 
